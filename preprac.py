@@ -12,8 +12,6 @@ def main():
     GPIO.setup(LED_PIN, GPIO.OUT)
     GPIO.setup(SWITCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-    #GPIO.add_event_detect(SWITCH_PIN, GPIO.FALLING, bouncetime=200)
-
     GPIO.wait_for_edge(SWITCH_PIN, GPIO.RISING, bouncetime=200)
     GPIO.output(LED_PIN, not GPIO.input(LED_PIN))
      
